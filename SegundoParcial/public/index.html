@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./js/scripts.js" defer></script>
+    <script src="./js/Entidades.js" defer></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"
+        integrity="sha512-hZf9Qhp3rlDJBvAKvmiG+goaaKRZA6LKUO35oK6EsM0/kjPK32Yw7URqrq3Q+Nvbbt8Usss+IekL7CRn83dYmw=="
+        crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"
+        defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"
+        defer></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"
+        defer></script>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="shortcut icon" href="./img/LogoAutos.png" />
+    <title>Ultra Cars</title>
+</head>
+
+
+<body>
+    <header>
+        <a href="./"><img src="./img/LogoAutos.png" alt="logo empresa" id="logo"></a>
+        <nav>
+            <a href="./nosotros.html">Nosotros</a>
+            <a href="./anuncios.html">Anuncios</a>
+            <a href="./blog.html">Blog</a>
+            <a href="./contacto.html">Contacto</a>
+        </nav>
+    </header>
+
+    <div>
+
+        <div class="row justify-content-center">
+
+            <h1 class="h1">Administracion</h1>
+
+            <img src="./img/autos2.jpg" alt="Imagen Principal" id="imgPpal">
+
+            <form action="#" id="form">
+                <fieldset>
+                    <legend class="h3">Informacion de Anuncio</legend>
+
+                    <div>
+
+                        <div>
+                            <label id="lblId" for="idAnuncio" hidden>Id</label>
+                            <input type="text" id="idAnuncio" name="idAnuncio" hidden disabled>
+                        </div>
+
+                        <div>
+                            <label for="txtTitulo">Titulo</label>
+                            <input placeholder="Titulo" type="text" id="txtTitulo" name="titulo" required></input>
+                        </div>
+
+                        <div>
+                            <label for="txtTransaccion">Transaccion</label>
+                            <div id="divTransaccion">
+                                <select id="txtTransaccion" name="transaccion" required>
+                                    <option value="Venta">Venta</option>
+                                    <option value="Alquiler">Alquiler</option>
+                                    <option value="Permuta">Permuta</option>
+                                    <option value="nada" selected>--Elegir--</option>
+                                </select>
+
+                            </div>
+
+                        </div>
+
+                        <div>
+                            <label for="txtDescripcion">Descripcion</label>
+                            <input placeholder="Descripcion" type="text" id="txtDescripcion" name="descripcion"
+                                required></input>
+                        </div>
+
+                        <div>
+                            <label for="numPrecio">Precio</label>
+                            <input placeholder="Precio" type="text" id="numPrecio" name="precio" required></input>
+                        </div>
+
+                        <div id="tresUltimos">
+
+                            <div class="divs">
+                                <label for="raza"><img src="./img/puertas.png" alt="puertas" class="icon"></label>
+                                <input placeholder="Puertas..." type="text" id="txtPuertas" name="num_puertas"
+                                    required></input>
+                            </div>
+
+                            <div class="divs">
+                                <label for="fecha"><img src="./img/kms.png" alt="kms" class="icon"></label>
+                                <input placeholder="kms..." type="text" id="kms" name="num_KMs" required></input>
+                            </div>
+
+                            <div class="divs">
+                                <label for="fecha"><img src="./img/potencia.png" alt="motor" class="icon"></label>
+                                <input placeholder="Potencia..." type="text" id="txtPotencia" name="potencia"
+                                    required></input>
+                            </div>
+
+
+                        </div>
+
+                        <br>
+                        <button type="submit" id="btnCrearModificar" value="Guardar"><img src="./img/Guardar.png" alt=""
+                                class="icon"> Guardar</input>
+                            <button type="button" id="btnBorrar" hidden><img src="./img/Eliminar.png"
+                                    alt="Imagen Eliminar" class="icon"> Eliminar</button>
+                            <button type="button" id="btnCancelar" hidden><img src="./img/Eliminar.png"
+                                    alt="Imagen Cancelar" class="icon"> Cancelar</button>
+
+
+
+                    </div>
+
+
+                </fieldset>
+            </form>
+
+            <fieldset class="col-10">
+                <fieldset>
+                    <legend>Filtros</legend>
+                    <div>
+
+                        <div class="d-flex justify-content-center">
+
+
+
+
+                            <div class="dropdown">
+                                <label for="filtro"></i>Filtro Transacción</label>
+                                <select name="filtro" class="btn btn-lg btn-info" id="txtFiltros">
+                                    <option class="btn dropdown-item" value="Venta" id="ven">Venta</option>
+                                    <option class="btn dropdown-item" value="Alquiler" id="alq">Alquiler
+                                    </option>
+                                    <option class="btn dropdown-item" value="nada" selected id="nad">N/A
+                                    </option>
+                                </select>
+                            </div>
+
+
+                            <div>
+                                <label id="lbProm" for="prom">Promedio</label>
+                                <input type="text" id="promedio" name="prom" readonly>
+                            </div>
+                            <div>
+                                <label id="lbMax" for="max">Precio Máximo</label>
+                                <input type="text" id="maximo" name="max" readonly>
+                            </div>
+                            <div>
+                                <label id="lbMin" for="min">Precio Mínimo</label>
+                                <input type="text" id="minimo" name="min" readonly>
+                            </div>
+                            <div>
+                                <label id="lbPromPot" for="promPot">Promedio de Potencia</label>
+                                <input type="text" id="pp" name="promPot" readonly>
+                            </div>
+                            <div>
+                                <label id="tresul" for="tresUl">Ultimos Cargados</label>
+                                <input type="text" id="tresul" name="tresUl" readonly>
+                            </div>
+
+                        </div>
+                </fieldset>
+
+
+                <div id="divChks" class="d-flex justify-content-center">
+                    <label><input type="checkbox" id="cboxId" checked value="first_checkbox"> ID </label>
+                    <label><input type="checkbox" id="cboxTitulo" checked value="first_checkbox"> Titulo </label>
+                    <label><input type="checkbox" id="cboxTransaccion" checked value="first_checkbox"> Transaccion
+                    </label>
+                    <label><input type="checkbox" id="cboxDescripcion" checked value="first_checkbox"> Descripcion
+                    </label>
+                    <label><input type="checkbox" id="cboxPrecio" checked value="first_checkbox"> Precio </label>
+                    <label><input type="checkbox" id="num_puertas" checked value="first_checkbox"> Puertas </label>
+                    <label><input type="checkbox" id="num_KMs" checked value="first_checkbox"> KMs </label>
+                    <label><input type="checkbox" id="potencia" checked value="first_checkbox"> Potencia </label>
+                </div>
+
+        </div>
+
+        <br>
+        <div class="d-flex justify-content-center">
+            <div id="divTabla" class="col-10" style="background-color:rgb(177, 201, 129);"></div>
+        </div>
+        </fieldset>
+
+        <canvas id="chart" width="400" height="200"></canvas>
+
+    </div>
+
+    <footer>
+        <nav>
+            <a href="./nosotros.html">Nosotros</a>
+            <a href="./anuncios.html">Anuncios</a>
+            <a href="./blog.html">Blog</a>
+            <a href="./contacto.html">Contacto</a>
+        </nav>
+        <p>Todos los derechos reservados ©</p>
+    </footer>
+
+</body>
+
+</html>
